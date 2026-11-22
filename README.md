@@ -68,36 +68,36 @@ A 2D dodge game written in C using the [raylib](https://www.raylib.com) library.
 
 main.c starts with #define _CRT_SECURE_NO_WARNINGS so Visual Studio accepts fopen, fscanf and fprintf.
 
-### GCC / MinGW (Windows)
+### CC / MinGW (Windows)
 
-bash
+```bash
 gcc main.c car.c -o CarGame -lraylib -lopengl32 -lgdi32 -lwinmm
-
+```
 
 ### GCC (Linux)
 
-bash
+```bash
 gcc main.c car.c -o CarGame -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
-
-
+```
 Run the game from the folder that contains player.png and enemy.png, because the images are loaded using relative paths:
 
-bash
+```bash
 ./CarGame
+```
+
 
 
 ## High Scores
 
-The best score for each difficulty is stored in highScore.txt, one number per line:
+The best score for each difficulty is stored in `highScore.txt`, one number per line:
 
-
+```text
 12   <- Easy
 8    <- Medium
 3    <- Hard
-
+```
 
 If the file does not exist, all scores start at 0. Delete the file to reset your records.
-
 ## How It Works
 
 - *Game states:* an enum GameState { MENU, PLAYING, GAME_END } decides what runs and what is drawn each frame.
@@ -122,10 +122,10 @@ If the file does not exist, all scores start at 0. Delete the file to reset your
 
 ## Notes
 
-CarDraw in car.c contains a debug line that draws the hitbox outline:
+CarDraw in `car.c` contains a debug line that draws the hitbox outline:
 
-c
+```c
 DrawRectangleLinesEx(CarGetRect(c), 2, RED);
-
+```
 
 Remove it for the final version of the game.
