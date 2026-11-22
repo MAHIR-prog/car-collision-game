@@ -41,12 +41,15 @@ A 2D dodge game written in C using the [raylib](https://www.raylib.com) library.
 
 ## Project Structure
 
+
+```text
 ├── main.c          # Game loop, game states, menu, scoring, high score file handling
 ├── car.c           # Car functions: create, draw, move, respawn, hitbox
 ├── car.h           # car struct, GameState enum, function declarations
 ├── player.png      # Player car image
 ├── enemy.png       # Enemy car image
 └── highScore.txt   # Created automatically after the first record is saved
+```
 
 
 ## Requirements
