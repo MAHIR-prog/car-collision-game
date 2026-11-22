@@ -41,7 +41,6 @@ A 2D dodge game written in C using the [raylib](https://www.raylib.com) library.
 
 ## Project Structure
 
-
 ├── main.c          # Game loop, game states, menu, scoring, high score file handling
 ├── car.c           # Car functions: create, draw, move, respawn, hitbox
 ├── car.h           # car struct, GameState enum, function declarations
@@ -121,6 +120,9 @@ If the file does not exist, all scores start at 0. Delete the file to reset your
 ## Notes
 
 CarDraw in car.c contains a debug line that draws the hitbox outline:
+
 c
 DrawRectangleLinesEx(CarGetRect(c), 2, RED);
+
+
 Remove it for the final version of the game.
