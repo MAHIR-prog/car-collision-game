@@ -43,18 +43,6 @@ int main(){
     Texture2D enemy_image = LoadTexture("enemy.png");
     main_player.image = player_image;// Now car.h mai joh car datatype a structure present hai iusmai aik image naam ka bhi datatype present hai toh we know that main_player of car datatype so main_player is object of that car datatype so humnai main_player ko hi istemal karke image ko access kiya or iusmai hi player.png ko store karwaya
     // player_image mai hi player ki image present hai toh humnai main_player.image ko player_image hi pass kardiya
-
-    // YEH KAAM BOHT ZARURI HAI KIYUKAI AB HUM DIFF ENEMIES KO PHELE SAI HI ENEMIES ARRAY MAI DEFINE KARKE RAKH DAINGAI TAKAI MAIN GAME KI EXECUTION KAI WAQT BAR BAR ENEMY DEFINE NA HO PHELE SAI HI ENEMIES DEFINE HONGAI TOH GAME KI SPEED OBV LI ZIADA HOGI
-    for(int i=0;i < totalenemies;i++){
-        enemies[i] = CarCreate((Vector2){370,250},(Vector2){100,130 },BLUE); // yeh diff enemies car ko create karaha hai in this CarCreate is func define in car.c yeh hamare car ko create karaha hai toh first argument position ka yeh kheraha hai kai car ko 370px (in x-axis) par or 250px (in y-axis) par spawn karo then second argument of size yeh kheraha hai kai car ka size 100px width or 130px height hoga. or thid argument mai hum car ka colour pass karahe hai kai car ka colour BLUE hoga. toh yeh diff car create karaiga or store karaiga in enemies array mai.
-
-        enemies[i].image = enemy_image; // Now hum wohi joh humnai enemy car ki image store karwayi thi in enemy_image wohi image hum enemies array kai diff enemies ko image dehrahe hai as we know enemies array is of car(our define datatype) so ius car struct mai image nami datatype tha and enemies[i] is object of that car atatype so enemies[i] ko istemal karte huye humnai woh image wala datatype access kiya or image store kardi
-
-        EnemyRespawn(&enemies[i],enemySpeed,enemies,i); // Now EnemyRespawn is func us to respawn car jab aik car downwards ayegi or screen sai pass hojayegi toh carrespawn func yehi karaiga woh car ko check karaiga or iusko correct lane mai wapsi respawn karaiga or yeh bhi check karaiga kai do car overlap na karahi ho  
-        // Now &enemies[i] means enemyrespawn wapsi pheli car ko hi respawn karaiga isliye pointer diya tkai same car hi wapsi respawn ho
-        // enemyspeed pass karahe hai kiyukai har enemy car ki speed same hogi or har car 3px hai to hahr enemy car move by 3px 
-        // enemis isliye pass kiya takai check karsake kai koi car overlap na horahi ho    
-    }
     GameState state = MENU;
     while(WindowShouldClose() == false){ // WindowShouldClose() is raylib func agar user nai windows mai X button dabaya toh yeh true return karaiga while loop stops agar nhi kiya toh yeh false return karaiga or game chalta rahega
         if(state == PLAYING){
